@@ -1,0 +1,13 @@
+.venv/
+.pytest_cache/
+*.egg-info/
+__pycache__/
+.DS_Store
+work/
+assets/
+models/
+comfyui/
+comfyui/.venv/
+three-renderer/node_modules/
+three-renderer/.npm-cache/
+three-renderer/.browsers/

@@ -1,0 +1,47 @@
+{
+  "title": "My faceless video",
+  "output": "work/output.mp4",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "narration": "Replace this narration with your script.",
+      "image_prompt": "A cinematic establishing shot, no text",
+      "image": "assets/scene-01.png",
+      "voice": "assets/scene-01.wav",
+      "subtitle": "assets/scene-01.srt",
+      "duration": 4
+    }
+  ],
+  "tools": {
+    "image": [
+      "node",
+      "three-renderer/render_scene.mjs",
+      "--scene-id",
+      "{scene_id}",
+      "--prompt",
+      "{prompt}",
+      "--seed",
+      "1337",
+      "--output",
+      "{output}"
+    ],
+    "voice": [
+      "python",
+      "tools/local_voice_piper.py",
+      "--model",
+      "models/piper/en_US-lessac-high.onnx",
+      "--text",
+      "{text}",
+      "--output",
+      "{output}"
+    ],
+    "subtitle": [
+      "python",
+      "tools/local_subtitle_faster_whisper.py",
+      "--audio",
+      "{audio}",
+      "--output",
+      "{output}"
+    ]
+  }
+}
